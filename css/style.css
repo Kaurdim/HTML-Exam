@@ -106,7 +106,6 @@ a:hover {
 	border-radius: 5px;
 	font-size: 9px;
 	font-style: italic;
-
 }
 .twitter a {
 	background: url(../twitter/1iXoaoYEBNM.jpg) no-repeat;
@@ -118,7 +117,6 @@ a:hover {
 }
 .featured {
 	height: auto;
-
 }
 .slider {
 	height: auto;
@@ -130,23 +128,28 @@ a:hover {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	transition: all ease 0.5s;
+	transition: all ease 0.8s;
 	overflow: hidden;
 	opacity: 0;
-}
-.first-photo {
-	opacity: 1;
 }
 .section-slider > img {
 	width: 100%;
 	overflow: hidden;
 }
-.section-slider:target {
-	opacity: 1;
-	z-index: 2; 
+#slider1, #slider2, #slider3, #slider4 {
+	display: none;
 }
-.section-slider:target .first-photo {
-	opacity: 0;
+#slider1:checked ~ .slider  #photo-1 {
+	opacity: 1;
+}
+#slider2:checked ~ .slider  #photo-2 {
+	opacity: 1;
+}
+#slider3:checked ~ .slider  #photo-3 {
+	opacity: 1;
+}
+#slider4:checked ~ .slider  #photo-4 {
+	opacity: 1;
 }
 .section-slider > p {
 	width: auto;
@@ -214,26 +217,47 @@ a:hover {
 	flex: 1;
 	border-right: 1px solid #D3EDE9;
 }
-.nav li:hover a {
+.nav li:hover label {
 	color: #EC6635;
 }
 .nav li:last-child {
 	border: none;
 }
-.nav a {
+.nav label {
+	color: #34AC98;
 	display: block;
 	width: auto;
 	height: 60px;
 	background-color: #EFF8F7;
 	padding: 25px 12px 0 20px;
 	box-shadow: inset 0 0 1px 1px #f4fcfb;
+	transition: all ease 0.4s;
+	cursor: pointer;
 }
-
+.nav input {
+	display: none;
+}
+#slider1:checked  ~ .silder-link label[for="slider1"] {
+	background: #D9EFEC;
+	box-shadow: none;
+}
+#slider2:checked  ~ .silder-link label[for="slider2"] {
+	background: #D9EFEC;
+	box-shadow: none;
+}
+#slider3:checked  ~ .silder-link label[for="slider3"] {
+	background: #D9EFEC;
+	box-shadow: none;
+}
+#slider4:checked  ~ .silder-link label[for="slider4"] {
+	background: #D9EFEC;
+	box-shadow: none;
+}
 .nav h3 {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: lighter;
 	margin-bottom: 5px;
 }
@@ -241,7 +265,7 @@ a:hover {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-size: 10px;
+	font-size: 12px;
 	font-style: italic;
 }
 .newsletter {
@@ -337,10 +361,6 @@ article > p {
 .footer-info > p > a {
 	display: inline-block;
 }
-/*.active {
-	color: #333;
-	font-size: 25px;
-}*/
 .footer-info a {
 	font-size: 11px;
 }
@@ -420,7 +440,7 @@ article > p {
 	.content {
 		padding: 0;
 	}
-	.nav a {
+	.nav label  {
 		height: 20px;
 		padding: 10px 0 5px 0;
 		text-align: center;
